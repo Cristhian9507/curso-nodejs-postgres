@@ -10,7 +10,9 @@ class UserService {
   }
 
   async find() {
-    const res = models.User.findAll();
+    const res = models.User.findAll({
+      include: ['customer']
+    });
     return res;
   }
 
